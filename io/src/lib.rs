@@ -15,7 +15,7 @@ impl Metadata for ContractMetadata {
     /// I/O types for the `handle()` entry point.
     ///
     /// Here the [`PingPong`] type is used for both incoming and outgoing messages.
-    type Handle = InOut<PingPong, PingPong>;
+    type Handle = InOut<HikikomoriAction, u32>;
     /// Types for miscellaneous scenarios.
     type Others = ();
     /// The input type for the `handle_reply()` entry point.
@@ -29,15 +29,21 @@ impl Metadata for ContractMetadata {
     type State = Out<State>;
 }
 
-pub type State = Vec<(ActorId, u128)>;
+#[derive(Debug, Default, Encode, Decode, TypeInfo, PartialEq, Eq)]
+#[codec(crate = gstd::codec)]
+#[scale_info(crate = gstd::scale_info)]
+pub struct Hikikomori {
+    pub device: ActorId,
+    pub energy: u32,
+}
 
-/// Replies with [`Pong`](PingPong::Pong) if received [`Ping`](PingPong::Ping).
+pub type State = Hikikomori;
+
 #[derive(Encode, Decode, TypeInfo, Debug, PartialEq, Eq)]
 #[codec(crate = gstd::codec)]
 #[scale_info(crate = gstd::scale_info)]
-pub enum PingPong {
-    Ping,
-    Pong,
+pub enum HikikomoriAction {
+    AddEnergy,
 }
 
 /// Queries the contract state.
@@ -47,14 +53,11 @@ pub enum PingPong {
 #[codec(crate = gstd::codec)]
 #[scale_info(crate = gstd::scale_info)]
 pub enum StateQuery {
-    /// Gets the list of actors who have [`ping`](PingPong::Ping)ed the contract.
+    /// Gets the energy of the hikikomori.
     ///
-    /// Returns [`StateQueryReply::Pingers`].
-    Pingers,
-    /// Gets the count of [`ping`](PingPong::Ping)s received from the given [`ActorId`].
-    ///
-    /// Returns [`StateQueryReply::PingCount`].
-    PingCount(ActorId),
+    /// Returns [`StateQueryReply::Energy`].
+    Energy,
+    Device,
 }
 
 /// The result of successfully processed [`StateQuery`].
@@ -64,8 +67,8 @@ pub enum StateQuery {
 #[codec(crate = gstd::codec)]
 #[scale_info(crate = gstd::scale_info)]
 pub enum StateQueryReply {
-    /// Returned from [`StateQuery::Pingers`].
-    Pingers(Vec<ActorId>),
-    /// Returned from [`StateQuery::PingCount`].
-    PingCount(u128),
+    /// Returned from [`StateQuery::Energy`].
+    Energy(u32),
+    /// Returned from [`StateQuery::Device`].
+    Device(ActorId),
 }

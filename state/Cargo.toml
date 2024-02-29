@@ -1,5 +1,5 @@
 [package]
-name = "template-state"
+name = "hikikomori-state"
 version.workspace = true
 edition.workspace = true
 publish.workspace = true
@@ -7,7 +7,7 @@ publish.workspace = true
 [dependencies]
 gstd.workspace = true
 gmeta = { workspace = true, features = ["codegen"] }
-template-io.workspace = true
+hikikomori-io.workspace = true
 
 [build-dependencies]
 gear-wasm-builder = { workspace = true, features = ["metawasm"] }

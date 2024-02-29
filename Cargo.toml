@@ -1,24 +1,23 @@
 [workspace.package]
-homepage = "https://wiki.gear-tech.io/docs/examples/prerequisites"
-authors = ["Gear Foundation <hello@gear.foundation>"]
+authors = ["Vadim Smirnov <ukint-vs@proton.me>"]
 version = "0.1.0"
 license = "MIT"
 edition = "2021"
 publish = false
 
 [package]
-name = "template"
+name = "hikikomori-program"
 version.workspace = true
 edition.workspace = true
 publish.workspace = true
 
 [dependencies]
 gstd.workspace = true
-template-io.workspace = true
+hikikomori-io.workspace = true
 
 [build-dependencies]
 gear-wasm-builder.workspace = true
-template-io.workspace = true
+hikikomori-io.workspace = true
 
 [dev-dependencies]
 gtest.workspace = true
@@ -31,12 +30,12 @@ tokio.workspace = true
 members = ["state", "xtask"]
 
 [workspace.dependencies]
-gstd = { git = "https://github.com/gear-tech/gear", tag = "v1.0.2" }
-gmeta = { git = "https://github.com/gear-tech/gear", tag = "v1.0.2" }
-gear-wasm-builder = { git = "https://github.com/gear-tech/gear", tag = "v1.0.2" }
-gtest = { git = "https://github.com/gear-tech/gear", tag = "v1.0.2" }
-gclient = { git = "https://github.com/gear-tech/gear", tag = "v1.0.2" }
-template-io.path = "io"
+gstd = { git = "https://github.com/gear-tech/gear", tag = "v1.1.1" }
+gmeta = { git = "https://github.com/gear-tech/gear", tag = "v1.1.1" }
+gear-wasm-builder = { git = "https://github.com/gear-tech/gear", tag = "v1.1.1" }
+gtest = { git = "https://github.com/gear-tech/gear", tag = "v1.1.1" }
+gclient = { git = "https://github.com/gear-tech/gear", tag = "v1.1.1" }
+hikikomori-io.path = "io"
 tokio = "1"
 xshell = "0.2"
 anyhow = "1"
