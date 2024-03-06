@@ -8,9 +8,10 @@ static mut STATE: Option<Hikikomori> = None;
 // The `init()` entry point.
 #[no_mangle]
 extern fn init() {
+    let device = msg::load().expect("Wrong payload");
     unsafe {
         STATE = Some(Hikikomori {
-            device: msg::source(),
+            device,
             ..Default::default()
         })
     }

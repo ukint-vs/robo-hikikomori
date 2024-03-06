@@ -1,6 +1,6 @@
 #![no_std]
 
-use gmeta::{InOut, Metadata, Out};
+use gmeta::{InOut, Metadata, Out, In};
 use gstd::{prelude::*, ActorId};
 
 /// The contract metadata. Used by frontend apps & for describing the types of messages that can be
@@ -11,7 +11,7 @@ pub struct ContractMetadata;
 /// doesn't implement it.
 impl Metadata for ContractMetadata {
     /// I/O types for the `init()` entry point.
-    type Init = ();
+    type Init = In<ActorId>;
     /// I/O types for the `handle()` entry point.
     ///
     /// Here the [`PingPong`] type is used for both incoming and outgoing messages.

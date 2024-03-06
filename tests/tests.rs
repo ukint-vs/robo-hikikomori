@@ -13,7 +13,7 @@ fn test() {
     let state_binary = get_state_binary();
     let program = Program::current(&system);
 
-    let mut result = program.send_bytes(2, []);
+    let mut result = program.send_bytes(2, ActorId::from(2));
 
     assert!(!result.main_failed());
 
