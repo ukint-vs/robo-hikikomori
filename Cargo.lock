@@ -14,8 +14,8 @@ dependencies = [
 
 [[package]]
 name = "actor-system-error"
-version = "1.1.1"
-source = "git+https://github.com/gear-tech/gear?tag=v1.1.1#33ee05d5aab4c46484192ec231fc528ab904a250"
+version = "1.2.0"
+source = "git+https://github.com/gear-tech/gear?tag=v1.2.0#80fffbcc77edc55c1c84bbdc61cdf96225935b41"
 dependencies = [
  "derive_more",
 ]
@@ -1933,9 +1933,9 @@ dependencies = [
  "anyhow",
  "async-trait",
  "futures",
- "gear-core",
- "gear-core-errors",
- "gear-utils",
+ "gear-core 1.1.1",
+ "gear-core-errors 1.1.1",
+ "gear-utils 1.1.1",
  "gsdk",
  "hex",
  "parity-scale-codec",
@@ -1950,25 +1950,25 @@ name = "gcore"
 version = "1.1.1"
 source = "git+https://github.com/gear-tech/gear?tag=v1.1.1#33ee05d5aab4c46484192ec231fc528ab904a250"
 dependencies = [
- "gear-core-errors",
+ "gear-core-errors 1.1.1",
  "gear-stack-buffer",
- "gsys",
+ "gsys 1.1.1",
  "parity-scale-codec",
 ]
 
 [[package]]
 name = "gear-common"
-version = "1.1.1"
-source = "git+https://github.com/gear-tech/gear?tag=v1.1.1#33ee05d5aab4c46484192ec231fc528ab904a250"
+version = "1.2.0"
+source = "git+https://github.com/gear-tech/gear?tag=v1.2.0#80fffbcc77edc55c1c84bbdc61cdf96225935b41"
 dependencies = [
  "derive_more",
  "enum-iterator 1.5.0",
  "frame-support",
  "frame-system",
  "gear-common-codegen",
- "gear-core",
- "gear-wasm-instrument",
- "gsys",
+ "gear-core 1.2.0",
+ "gear-wasm-instrument 1.2.0",
+ "gsys 1.2.0",
  "log",
  "primitive-types",
  "sp-arithmetic",
@@ -1979,8 +1979,8 @@ dependencies = [
 
 [[package]]
 name = "gear-common-codegen"
-version = "1.1.1"
-source = "git+https://github.com/gear-tech/gear?tag=v1.1.1#33ee05d5aab4c46484192ec231fc528ab904a250"
+version = "1.2.0"
+source = "git+https://github.com/gear-tech/gear?tag=v1.2.0#80fffbcc77edc55c1c84bbdc61cdf96225935b41"
 dependencies = [
  "quote",
  "syn 2.0.52",
@@ -1995,9 +1995,32 @@ dependencies = [
  "byteorder",
  "derive_more",
  "enum-iterator 1.5.0",
- "gear-core-errors",
- "gear-wasm-instrument",
- "gsys",
+ "gear-core-errors 1.1.1",
+ "gear-wasm-instrument 1.1.1",
+ "gsys 1.1.1",
+ "hashbrown 0.14.3",
+ "hex",
+ "log",
+ "num-traits",
+ "parity-scale-codec",
+ "paste",
+ "scale-info",
+ "serde",
+ "wasmparser-nostd",
+]
+
+[[package]]
+name = "gear-core"
+version = "1.2.0"
+source = "git+https://github.com/gear-tech/gear?tag=v1.2.0#80fffbcc77edc55c1c84bbdc61cdf96225935b41"
+dependencies = [
+ "blake2-rfc",
+ "byteorder",
+ "derive_more",
+ "enum-iterator 1.5.0",
+ "gear-core-errors 1.2.0",
+ "gear-wasm-instrument 1.2.0",
+ "gsys 1.2.0",
  "hashbrown 0.14.3",
  "hex",
  "log",
@@ -2011,19 +2034,19 @@ dependencies = [
 
 [[package]]
 name = "gear-core-backend"
-version = "1.1.1"
-source = "git+https://github.com/gear-tech/gear?tag=v1.1.1#33ee05d5aab4c46484192ec231fc528ab904a250"
+version = "1.2.0"
+source = "git+https://github.com/gear-tech/gear?tag=v1.2.0#80fffbcc77edc55c1c84bbdc61cdf96225935b41"
 dependencies = [
  "actor-system-error",
  "blake2-rfc",
  "derive_more",
- "gear-core",
- "gear-core-errors",
+ "gear-core 1.2.0",
+ "gear-core-errors 1.2.0",
  "gear-lazy-pages-common",
  "gear-sandbox",
  "gear-sandbox-env",
- "gear-wasm-instrument",
- "gsys",
+ "gear-wasm-instrument 1.2.0",
+ "gsys 1.2.0",
  "log",
  "parity-scale-codec",
 ]
@@ -2039,19 +2062,30 @@ dependencies = [
 ]
 
 [[package]]
+name = "gear-core-errors"
+version = "1.2.0"
+source = "git+https://github.com/gear-tech/gear?tag=v1.2.0#80fffbcc77edc55c1c84bbdc61cdf96225935b41"
+dependencies = [
+ "derive_more",
+ "enum-iterator 1.5.0",
+ "scale-info",
+ "serde",
+]
+
+[[package]]
 name = "gear-core-processor"
-version = "1.1.1"
-source = "git+https://github.com/gear-tech/gear?tag=v1.1.1#33ee05d5aab4c46484192ec231fc528ab904a250"
+version = "1.2.0"
+source = "git+https://github.com/gear-tech/gear?tag=v1.2.0#80fffbcc77edc55c1c84bbdc61cdf96225935b41"
 dependencies = [
  "actor-system-error",
  "derive_more",
- "gear-core",
+ "gear-core 1.2.0",
  "gear-core-backend",
- "gear-core-errors",
+ "gear-core-errors 1.2.0",
  "gear-lazy-pages-common",
  "gear-lazy-pages-interface",
- "gear-wasm-instrument",
- "gsys",
+ "gear-wasm-instrument 1.2.0",
+ "gsys 1.2.0",
  "log",
  "scale-info",
 ]
@@ -2071,13 +2105,13 @@ dependencies = [
 
 [[package]]
 name = "gear-lazy-pages"
-version = "1.1.1"
-source = "git+https://github.com/gear-tech/gear?tag=v1.1.1#33ee05d5aab4c46484192ec231fc528ab904a250"
+version = "1.2.0"
+source = "git+https://github.com/gear-tech/gear?tag=v1.2.0#80fffbcc77edc55c1c84bbdc61cdf96225935b41"
 dependencies = [
  "cfg-if",
  "derive_more",
  "errno",
- "gear-core",
+ "gear-core 1.2.0",
  "gear-lazy-pages-common",
  "gear-sandbox-host",
  "libc",
@@ -2091,22 +2125,22 @@ dependencies = [
 
 [[package]]
 name = "gear-lazy-pages-common"
-version = "1.1.1"
-source = "git+https://github.com/gear-tech/gear?tag=v1.1.1#33ee05d5aab4c46484192ec231fc528ab904a250"
+version = "1.2.0"
+source = "git+https://github.com/gear-tech/gear?tag=v1.2.0#80fffbcc77edc55c1c84bbdc61cdf96225935b41"
 dependencies = [
- "gear-core",
+ "gear-core 1.2.0",
  "num_enum",
  "parity-scale-codec",
 ]
 
 [[package]]
 name = "gear-lazy-pages-interface"
-version = "1.1.1"
-source = "git+https://github.com/gear-tech/gear?tag=v1.1.1#33ee05d5aab4c46484192ec231fc528ab904a250"
+version = "1.2.0"
+source = "git+https://github.com/gear-tech/gear?tag=v1.2.0#80fffbcc77edc55c1c84bbdc61cdf96225935b41"
 dependencies = [
  "byteorder",
  "gear-common",
- "gear-core",
+ "gear-core 1.2.0",
  "gear-lazy-pages-common",
  "gear-runtime-interface",
  "log",
@@ -2126,11 +2160,11 @@ dependencies = [
 
 [[package]]
 name = "gear-runtime-interface"
-version = "1.1.1"
-source = "git+https://github.com/gear-tech/gear?tag=v1.1.1#33ee05d5aab4c46484192ec231fc528ab904a250"
+version = "1.2.0"
+source = "git+https://github.com/gear-tech/gear?tag=v1.2.0#80fffbcc77edc55c1c84bbdc61cdf96225935b41"
 dependencies = [
  "byteorder",
- "gear-core",
+ "gear-core 1.2.0",
  "gear-lazy-pages",
  "gear-lazy-pages-common",
  "gear-sandbox-host",
@@ -2145,8 +2179,8 @@ dependencies = [
 
 [[package]]
 name = "gear-sandbox"
-version = "1.1.1"
-source = "git+https://github.com/gear-tech/gear?tag=v1.1.1#33ee05d5aab4c46484192ec231fc528ab904a250"
+version = "1.2.0"
+source = "git+https://github.com/gear-tech/gear?tag=v1.2.0#80fffbcc77edc55c1c84bbdc61cdf96225935b41"
 dependencies = [
  "gear-runtime-interface",
  "gear-sandbox-env",
@@ -2160,8 +2194,8 @@ dependencies = [
 
 [[package]]
 name = "gear-sandbox-env"
-version = "1.1.1"
-source = "git+https://github.com/gear-tech/gear?tag=v1.1.1#33ee05d5aab4c46484192ec231fc528ab904a250"
+version = "1.2.0"
+source = "git+https://github.com/gear-tech/gear?tag=v1.2.0#80fffbcc77edc55c1c84bbdc61cdf96225935b41"
 dependencies = [
  "parity-scale-codec",
  "sp-debug-derive",
@@ -2171,8 +2205,8 @@ dependencies = [
 
 [[package]]
 name = "gear-sandbox-host"
-version = "1.1.1"
-source = "git+https://github.com/gear-tech/gear?tag=v1.1.1#33ee05d5aab4c46484192ec231fc528ab904a250"
+version = "1.2.0"
+source = "git+https://github.com/gear-tech/gear?tag=v1.2.0#80fffbcc77edc55c1c84bbdc61cdf96225935b41"
 dependencies = [
  "environmental",
  "gear-sandbox-env",
@@ -2199,7 +2233,22 @@ version = "1.1.1"
 source = "git+https://github.com/gear-tech/gear?tag=v1.1.1#33ee05d5aab4c46484192ec231fc528ab904a250"
 dependencies = [
  "env_logger",
- "gear-core",
+ "gear-core 1.1.1",
+ "hex",
+ "nonempty",
+ "parity-scale-codec",
+ "path-clean",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
+name = "gear-utils"
+version = "1.2.0"
+source = "git+https://github.com/gear-tech/gear?tag=v1.2.0#80fffbcc77edc55c1c84bbdc61cdf96225935b41"
+dependencies = [
+ "env_logger",
+ "gear-core 1.2.0",
  "hex",
  "nonempty",
  "parity-scale-codec",
@@ -2224,9 +2273,9 @@ dependencies = [
  "chrono",
  "colored",
  "dirs",
- "gear-core",
+ "gear-core 1.1.1",
  "gear-pwasm-utils",
- "gear-wasm-instrument",
+ "gear-wasm-instrument 1.1.1",
  "gmeta",
  "log",
  "once_cell",
@@ -2242,6 +2291,16 @@ dependencies = [
 name = "gear-wasm-instrument"
 version = "1.1.1"
 source = "git+https://github.com/gear-tech/gear?tag=v1.1.1#33ee05d5aab4c46484192ec231fc528ab904a250"
+dependencies = [
+ "derive_more",
+ "enum-iterator 1.5.0",
+ "gwasm-instrument",
+]
+
+[[package]]
+name = "gear-wasm-instrument"
+version = "1.2.0"
+source = "git+https://github.com/gear-tech/gear?tag=v1.2.0#80fffbcc77edc55c1c84bbdc61cdf96225935b41"
 dependencies = [
  "derive_more",
  "enum-iterator 1.5.0",
@@ -2377,8 +2436,8 @@ dependencies = [
  "colored",
  "futures",
  "futures-util",
- "gear-core",
- "gear-core-errors",
+ "gear-core 1.1.1",
+ "gear-core-errors 1.1.1",
  "gsdk-codegen",
  "hex",
  "indexmap 2.2.4",
@@ -2418,7 +2477,7 @@ dependencies = [
  "futures",
  "galloc",
  "gcore",
- "gear-core-errors",
+ "gear-core-errors 1.1.1",
  "gstd-codegen",
  "hashbrown 0.14.3",
  "hex",
@@ -2443,21 +2502,26 @@ version = "1.1.1"
 source = "git+https://github.com/gear-tech/gear?tag=v1.1.1#33ee05d5aab4c46484192ec231fc528ab904a250"
 
 [[package]]
+name = "gsys"
+version = "1.2.0"
+source = "git+https://github.com/gear-tech/gear?tag=v1.2.0#80fffbcc77edc55c1c84bbdc61cdf96225935b41"
+
+[[package]]
 name = "gtest"
-version = "1.1.1"
-source = "git+https://github.com/gear-tech/gear?tag=v1.1.1#33ee05d5aab4c46484192ec231fc528ab904a250"
+version = "1.2.0"
+source = "git+https://github.com/gear-tech/gear?tag=v1.2.0#80fffbcc77edc55c1c84bbdc61cdf96225935b41"
 dependencies = [
  "colored",
  "derive_more",
  "env_logger",
- "gear-core",
- "gear-core-errors",
+ "gear-core 1.2.0",
+ "gear-core-errors 1.2.0",
  "gear-core-processor",
  "gear-lazy-pages",
  "gear-lazy-pages-common",
- "gear-utils",
- "gear-wasm-instrument",
- "gsys",
+ "gear-utils 1.2.0",
+ "gear-wasm-instrument 1.2.0",
+ "gsys 1.2.0",
  "hex",
  "log",
  "parity-scale-codec",
